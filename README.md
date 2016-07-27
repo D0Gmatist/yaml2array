@@ -1,2 +1,7 @@
-# yaml2array
-php sumplie class to convert yml file to an array
+# php yaml2array class
+A simple class to convert a yml file to an array
+
+```
+$yaml = new yaml();
+$array = $yaml->parse('/path/config.yml');
+```

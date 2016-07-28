@@ -12,7 +12,7 @@ class yaml {
 				
 				# It is a list item
 				if(substr($tline, 0, 1)=='-'){
-					$value = substr($tline, 2);
+					$value = rtrim(substr($tline, 2));
 					$data = $this->populate_level($levels, $value, $data, 'list');
 				}
 				# It is an Array/Object
@@ -20,7 +20,7 @@ class yaml {
 					# Label and Value
 					list($label, $value) = explode(':', $tline, 2);
 					if(substr($value, 0, 1)==' '){
-						$value = substr($value, 1);
+						$value = rtrim(substr($value, 1));
 					}
 
 					# Store that data
@@ -42,7 +42,7 @@ class yaml {
 						}
 						# It's going to be a value
 						else {
-							$data[$label] = $value;
+							$data[$label] = rtrim($value);
 						}
 					}
 
